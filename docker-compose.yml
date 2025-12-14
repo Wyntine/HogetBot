@@ -1,0 +1,11 @@
+services:
+  discord-bot:
+    build: .
+    container_name: hoget-bot
+    restart: unless-stopped
+    volumes:
+      - ~/data/hoget/db/chats.yml:/usr/src/hoget/database/chats.yml
+      - ~/data/hoget/db/users.yml:/usr/src/hoget/database/users.yml
+      - ~/data/hoget/env/.env:/usr/src/hoget/.env
+    env_file:
+      - .env
