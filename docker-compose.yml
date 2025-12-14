@@ -7,5 +7,3 @@ services:
       - ~/data/hoget/db/chats.yml:/usr/src/hoget/database/chats.yml
       - ~/data/hoget/db/users.yml:/usr/src/hoget/database/users.yml
       - ~/data/hoget/env/.env:/usr/src/hoget/.env
-    env_file:
-      - .env
