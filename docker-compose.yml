@@ -4,7 +4,7 @@ services:
     container_name: hoget-bot
     restart: unless-stopped
     volumes:
-      - ~/data/hoget/db/chats.yml:/usr/src/hoget/database/chats.yml
-      - ~/data/hoget/db/users.yml:/usr/src/hoget/database/users.yml
-      - ~/data/hoget/env/.env:/usr/src/hoget/.env
+      - ~/data/hoget/db/chats.yml:/usr/src/hoget/database/chats.yml:Z
+      - ~/data/hoget/db/users.yml:/usr/src/hoget/database/users.yml:Z
+      - ~/data/hoget/env/.env:/usr/src/hoget/.env:Z
     command: tail -f /dev/null
