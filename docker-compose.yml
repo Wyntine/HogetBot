@@ -6,8 +6,8 @@ services:
     container_name: hoget
     restart: always
     volumes:
-      - ~/data/hogetbot/db:/app/db/:Z
-      - ~/data/hogetbot/.env:/app/.env:Z
+      - /home/orkun/data/hogetbot/db:/app/db/:Z
+      - /home/orkun/data/hogetbot/.env:/app/.env:Z
     network_mode: "container:gluetun"
     depends_on:
       - gluetun
