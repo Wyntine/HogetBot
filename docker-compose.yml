@@ -1,0 +1,13 @@
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hoget
+    restart: always
+    volumes:
+      - ~/data/hogetbot/db:/app/db/:Z
+      - ~/data/hogetbot/.env:/app/.env:Z
+    network_mode: "container:gluetun"
+    depends_on:
+      - gluetun
