@@ -1,4 +1,11 @@
-import { existsSync, readFileSync, watchFile, writeFileSync } from "fs";
+import {
+  existsSync,
+  mkdirSync,
+  readFileSync,
+  watchFile,
+  writeFileSync,
+} from "fs";
+import { dirname } from "path";
 import { parse, stringify } from "yaml";
 
 export class Config<Data> {
@@ -59,6 +66,12 @@ export class Config<Data> {
   }
 
   private flush(data?: Data): void {
+    const dirPath = dirname(this.path);
+
+    if (dirPath !== ".") {
+      mkdirSync(dirPath, { recursive: true });
+    }
+
     writeFileSync(this.path, stringify(data ?? this.data));
   }
 

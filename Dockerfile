@@ -1,8 +1,7 @@
-FROM node:25-alpine
-WORKDIR /usr/src/hoget
-COPY package*.json ./
-RUN npm i
+FROM oven/bun:alpine
+
+WORKDIR /app
+COPY bun.lock package.json ./
+RUN bun install --frozen-lockfile
 COPY . .
-RUN chown -R node:node /usr/src/hoget
-USER node
-CMD ["npm", "start"]
+CMD ["bun", "start"]
