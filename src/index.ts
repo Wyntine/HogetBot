@@ -31,3 +31,5 @@ void (async () => {
   // @ts-expect-error it is a bug
   await commands.registerSlashCommands(client);
 })();
+
+// test
