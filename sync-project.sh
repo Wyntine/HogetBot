@@ -1,5 +1,3 @@
-#!/bin/bash
-
 set -u
 
 # ==========================================
@@ -69,7 +67,6 @@ docker run -d \
   -v $SERVER_DB_PATH:$CONTAINER_PATH/$LOCAL_DB_DIR:Z \
   -v $SERVER_ENV_PATH:$CONTAINER_PATH/$LOCAL_ENV_DIR:Z \
   --restart always \
-  --network=container:gluetun \
   $BUILD_NAME
 "
 
